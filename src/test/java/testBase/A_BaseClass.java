@@ -6,11 +6,16 @@ import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.Logger;  //logging - we need to import from only org.apache //we have already add apache dependency
+import org.testng.annotations.Parameters;
 
 /*
 - BaseClass contains reusable methods - remember this
@@ -27,11 +32,70 @@ public class A_BaseClass
     public WebDriver driver;
     public Logger logger;     //we need to declare this logger variable for creating logfiles - mean whatever work you carry through your project , you need to record all
 
+    public  ResourceBundle rb;  // this class object we created here to get the data from "config.properties" file for that we use
+
+    //Approach-1 :- by using xml file and pass the browser through parameter:-
+    //***********************************************************************
 
     @BeforeClass
-    public void setup()   //we create setup method for every test
+    @Parameters("browser") //we pass here "browser" from the xml parameter to call diff browser
+    public void setup(String br) //we create "br" variable to call diff. browser  //we create setup method for every test
     {
-        logger= LogManager.getLogger(this.getClass());//for logging.   //this.getClass()  -  this method for all the testcase class will record the logs, //so we don't need to separately for each testcase class
+
+        rb=ResourceBundle.getBundle("config"); //this is method we use to load config.properties file data
+
+        logger = LogManager.getLogger(this.getClass());//for logging.   //this.getClass()  -  this method for all the testcase class will record the logs, //so we don't need to separately for each testcase class
+
+        if (br.equals("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (br.equals("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        } else {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+
+        driver.manage().window().maximize();
+
+       // driver.get("https://demo.nopcommerce.com/");
+        //OR we want to call url from config.properties file
+        //*****************************************************
+       driver.get(rb.getString("url")); //BY usiing "rb" we use the method call getString and use the keyword "appURL" Which we menthoed in config.properties file
+
+
+
+        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
+
+         /* when you want to run through xml file :-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+            <suite name="my suit">
+                <test name="my test">
+                    <parameter name="browser" value="edge"></parameter>   //you need to pass the parameter here
+                    <classes>
+                        <class name="testCases.TC_001_AccountRegistrationTest"></class>  //you need to pass the class here which you want to run
+                    </classes>
+                </test>
+            </suite>
+         */
+    }
+
+
+
+    //Approach-2 :- //OR Normal way we create setup method to open browser:-
+    //**************************************************************************
+
+
+//
+//        @BeforeClass
+//    public void setup()   //we create setup method for every test
+//    {
+//        logger= LogManager.getLogger(this.getClass());//for logging.   //this.getClass()  -  this method for all the testcase class will record the logs, //so we don't need to separately for each testcase class
 
 
 
@@ -46,14 +110,15 @@ public class A_BaseClass
     //********************************************************************************************************
 
 
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://demo.nopcommerce.com/");
+//        WebDriverManager.chromedriver().setup();
+//        driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.get("https://demo.nopcommerce.com/");
+//
+//        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+//    }
 
-    }
 
     @AfterClass
     public void tearDown()       //we create tearDown method for every test

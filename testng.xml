@@ -2,13 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/abhis/IdeaProjects/Abhi_DemoNopCommerce_HybridProject_Learning">
+          name="C:/Users/abhis/IdeaProjects/Abhi_DemoNopCommerce_HybridProject_Learning/src/test/java/testBase/A_BaseClass.java">
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="testCases.TC_001_AccountRegistrationTest">
-                <methods>
-                    <include name="test_account_Registration"/>
-                </methods>
-            </class>
+            <class name="testCases.TC_001_AccountRegistrationTest"></class>
         </classes>
     </test>
 </suite>
