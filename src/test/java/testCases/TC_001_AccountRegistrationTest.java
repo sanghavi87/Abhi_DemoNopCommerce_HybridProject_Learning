@@ -43,7 +43,7 @@ public class TC_001_AccountRegistrationTest extends A_BaseClass
         regpage.setDateOfBirthday("14");
         regpage.setDateOfBirthMonth("July");
         regpage.setDateOfBirthYear("1987");
-        regpage.setEnterEmail(randomeString()+"@gmail.com");// randomly generated the email
+       // regpage.setEnterEmail(randomeString()+"@gmail.com");// randomly generated the email
         regpage.setEnterCompanyName(randomeString());
         regpage.setClickOnNewsletter();
 

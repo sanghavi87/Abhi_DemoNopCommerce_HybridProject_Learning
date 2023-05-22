@@ -3,6 +3,10 @@
 
 
 <suite name="my suit">
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"></listener>
+    </listeners>
+
     <test name="my test">
         <parameter name="browser" value="edge"></parameter>
         <classes>

@@ -1,8 +1,11 @@
 package testBase;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +14,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -29,10 +36,10 @@ import org.testng.annotations.Parameters;
 
 public class A_BaseClass
 {
-    public WebDriver driver;
+    public static WebDriver driver;
     public Logger logger;     //we need to declare this logger variable for creating logfiles - mean whatever work you carry through your project , you need to record all
 
-    public  ResourceBundle rb;  // this class object we created here to get the data from "config.properties" file for that we use
+    public  ResourceBundle rb;  // this class variable we created here to get the data from "config.properties" file for that we use
 
     //Approach-1 :- by using xml file and pass the browser through parameter:-
     //***********************************************************************
@@ -155,6 +162,29 @@ public class A_BaseClass
         String num = RandomStringUtils.randomNumeric(3);
 
         return (st+"@"+num);
+    }
+
+    //Method to use the take the failed testcase screenshot :-
+    //**********************************************************
+    public String captureScreen(String tname) throws IOException
+    {
+
+        String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        String destination = System.getProperty("user.dir") + "\\screenshots\\" + tname + "_" + timeStamp + ".png";
+
+        try
+        {
+            FileUtils.copyFile(source, new File(destination));
+        }
+        catch (Exception e)
+        {
+            e.getMessage();
+        }
+        return destination;
+
     }
 
 
