@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class DataProviders
 {
-    //DataProvider 1
+    //DataProvider:- 1
+   //*******************
 
     @DataProvider(name="LoginData")
     public Object[] getData() throws IOException
