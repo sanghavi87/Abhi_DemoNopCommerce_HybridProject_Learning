@@ -33,6 +33,9 @@ public class B_HomePage extends A_BasePage
     @FindBy(xpath = "//a[normalize-space()='Register']")
     WebElement lnkRegister;
 
+    @FindBy(xpath = "//a[normalize-space()='Log in']")
+    WebElement ClickOnLogin;
+
 
 
 
@@ -43,6 +46,11 @@ public class B_HomePage extends A_BasePage
     public void clickRegister()
     {
         lnkRegister.click();
+    }
+
+    public void setClickOnLogin()
+    {
+        ClickOnLogin.click();
     }
 
 }

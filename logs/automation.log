@@ -189,3 +189,13 @@
 23:29:03.339 [main] INFO  testCases.TC_001_AccountRegistrationTest - Providing customer data
 23:29:06.615 [main] INFO  testCases.TC_001_AccountRegistrationTest - Clicked on Register button
 23:30:46.737 [main] INFO  testCases.TC_001_AccountRegistrationTest - Validating expected message
+21:40:11.929 [main] INFO  testCases.TC_001_AccountRegistrationTest - ***** TC_001_AccountRegistrationTest *****
+21:40:13.032 [main] INFO  testCases.TC_001_AccountRegistrationTest - Clicked on register link
+21:40:13.041 [main] INFO  testCases.TC_001_AccountRegistrationTest - Providing customer data
+21:41:53.132 [main] ERROR testCases.TC_001_AccountRegistrationTest - test failed
+23:52:47.071 [main] INFO  testCases.TC_003_LoginDataDrivenTest_DDT - *** Starting TC_LoginDataDrivenTest DDT ***
+23:52:48.562 [main] INFO  testCases.TC_003_LoginDataDrivenTest_DDT - *** Clicked on Login Link ***
+23:52:48.565 [main] INFO  testCases.TC_003_LoginDataDrivenTest_DDT - *** Providing Login Details ***
+23:54:29.177 [main] INFO  testCases.TC_003_LoginDataDrivenTest_DDT - *** Starting TC_LoginDataDrivenTest DDT ***
+23:56:09.718 [main] INFO  testCases.TC_003_LoginDataDrivenTest_DDT - *** Starting TC_LoginDataDrivenTest DDT ***
+23:57:50.165 [main] INFO  testCases.TC_003_LoginDataDrivenTest_DDT - *** Starting TC_LoginDataDrivenTest DDT ***

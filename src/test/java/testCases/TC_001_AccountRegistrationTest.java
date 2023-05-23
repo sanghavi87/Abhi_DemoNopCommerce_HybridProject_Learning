@@ -15,7 +15,7 @@ public class TC_001_AccountRegistrationTest extends A_BaseClass
 
 
     @Test
-    void test_account_Registration() throws InterruptedException     //here when you write any method - remember always start with "test" keyword because it's naming convention
+   public void test_account_Registration() throws InterruptedException     //here when you write any method - remember always start with "test" keyword because it's naming convention
     {
 
     // first we need to work with current testcase- we need to have access on "PageObject" diff. classes
@@ -43,7 +43,7 @@ public class TC_001_AccountRegistrationTest extends A_BaseClass
         regpage.setDateOfBirthday("14");
         regpage.setDateOfBirthMonth("July");
         regpage.setDateOfBirthYear("1987");
-       // regpage.setEnterEmail(randomeString()+"@gmail.com");// randomly generated the email
+        regpage.setEnterEmail(randomeString()+"@gmail.com");// randomly generated the email
         regpage.setEnterCompanyName(randomeString());
         regpage.setClickOnNewsletter();
 
