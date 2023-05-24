@@ -14,7 +14,7 @@ public class TC_001_AccountRegistrationTest extends A_BaseClass
 {
 
 
-    @Test
+    @Test(groups = {"Regression","Master"})
    public void test_account_Registration() throws InterruptedException     //here when you write any method - remember always start with "test" keyword because it's naming convention
     {
 

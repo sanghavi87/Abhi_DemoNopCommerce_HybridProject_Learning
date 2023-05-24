@@ -1,12 +1,15 @@
 package testCases;
 
 import junit.framework.Assert;
+import org.testng.annotations.Test;
 import pageObjects.B_HomePage;
 import pageObjects.D_LoginPage;
 import testBase.A_BaseClass;
 
 public class TC_002_LoginTest extends A_BaseClass
 {
+
+    @Test(groups = {"Sanity","Master"})
 
     public void test_login()
     {

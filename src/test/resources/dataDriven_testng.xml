@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="my suit">
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"></listener>
+    </listeners>
+
+    <test name="my test">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <!-- <class name="testCases.TC_001_AccountRegistrationTest"></class>
+            <class name="testCases.TC_002_LoginTest"></class> -->
+            <class name="testCases.TC_003_LoginDataDrivenTest_DDT"></class>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+        <!-- Note:- dataDriven test cases we separately  run the testcase through separate xml file
+        above listener tag - we needed for report and screenshot
+         -->
