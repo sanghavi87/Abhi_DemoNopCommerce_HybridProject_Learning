@@ -27,8 +27,7 @@ public class D_LoginPage extends A_BasePage
     @FindBy(xpath = "//button[normalize-space()='Log in']")
     WebElement ClickOnLoginBtn;
 
-    @FindBy(xpath = "//a[normalize-space()='Log out']")
-    WebElement ClickOnLogoutBtn;
+
 
 
 
@@ -50,10 +49,7 @@ public class D_LoginPage extends A_BasePage
        ClickOnLoginBtn.click();
    }
 
-    public void setClickOnLogoutBtn()
-    {
-        ClickOnLogoutBtn.click();
-    }
+
 
 
 

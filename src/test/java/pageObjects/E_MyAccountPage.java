@@ -18,6 +18,9 @@ public class E_MyAccountPage extends A_BasePage
     @FindBy(xpath = "//a[@class='ico-account']")  //myAccount page heading
     WebElement myAccountPage;
 
+    @FindBy(xpath = "//a[normalize-space()='Log out']")
+    WebElement ClickOnLogoutBtn;
+
 
 // 3) Action Methods:-
 //*************************
@@ -30,6 +33,11 @@ public class E_MyAccountPage extends A_BasePage
             return (false);
         }
 
+    }
+
+    public void setClickOnLogoutBtn()
+    {
+        ClickOnLogoutBtn.click();
     }
 
 
