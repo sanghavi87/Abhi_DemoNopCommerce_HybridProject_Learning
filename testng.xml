@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/abhis/IdeaProjects/Abhi_DemoNopCommerce_HybridProject_Learning/src/test/java/testBase/A_BaseClass.java">
+          name="C:/Users/abhis/IdeaProjects/Abhi_DemoNopCommerce_HybridProject_Learning/src/test/java/testCases/TC_002_LoginTest.java">
+
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="testCases.TC_001_AccountRegistrationTest"></class>
-        </classes>
+         <class name="testCases.TC_001_AccountRegistrationTest"></class>
+     </classes>
     </test>
 </suite>

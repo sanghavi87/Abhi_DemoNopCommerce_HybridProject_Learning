@@ -10,11 +10,10 @@
   <name>Abhi_DemoNopCommerce_HybridProject_Learning</name>
   <url>http://maven.apache.org</url>
 
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-
 
   <build>
     <pluginManagement>
@@ -27,7 +26,8 @@
           <version>3.0.0-M7</version>
           <configuration>
             <suiteXmlFiles>
-              <suiteXmlFile>master.xml</suiteXmlFile>
+              <suiteXmlFile>master_testng.xml</suiteXmlFile>
+
             </suiteXmlFiles>
 
           </configuration>
@@ -44,6 +44,7 @@
 
     </pluginManagement>
   </build>
+
 
 
 
@@ -148,7 +149,6 @@
       <artifactId>extentreports</artifactId>
       <version>5.0.9</version>
     </dependency>
-
 
 
 

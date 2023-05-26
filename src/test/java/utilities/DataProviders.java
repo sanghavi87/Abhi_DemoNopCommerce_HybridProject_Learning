@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class DataProviders
 {
-    //DataProvider:- 1
+    //DataProvider:- 1 login details
    //*******************
 
     @DataProvider(name="LoginData")
@@ -32,7 +32,7 @@ public class DataProviders
 
     }
 
-    //DataProvider 2
+    //DataProvider 2 register
 
     //DataProvider 3
 

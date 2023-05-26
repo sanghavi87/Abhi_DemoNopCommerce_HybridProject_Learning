@@ -38,11 +38,11 @@ public class TC_001_AccountRegistrationTest extends A_BaseClass
       //***************************************************************************
         logger.info("Providing customer data");
         regpage.setSelectGender();
-        regpage.setFirstName("Magan");  //toUpperCase()-  this is is convert your firstname into uppercase- just for understanding
-        regpage.setLastName("patel");
-        regpage.setDateOfBirthday("14");
-        regpage.setDateOfBirthMonth("July");
-        regpage.setDateOfBirthYear("1987");
+        regpage.setFirstName(rb.getString("firstName"));  //toUpperCase()-  this is is convert your firstname into uppercase- just for understanding
+        regpage.setLastName(rb.getString("lastName"));
+        regpage.setDateOfBirthday(rb.getString("dob"));
+        regpage.setDateOfBirthMonth(rb.getString("dom"));
+        regpage.setDateOfBirthYear(rb.getString("doy"));
         regpage.setEnterEmail(randomeString()+"@gmail.com");// randomly generated the email
         regpage.setEnterCompanyName(randomeString());
         regpage.setClickOnNewsletter();

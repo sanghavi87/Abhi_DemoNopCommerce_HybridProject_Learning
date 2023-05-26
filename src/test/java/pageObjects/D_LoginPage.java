@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class D_LoginPage extends A_BasePage
 {
-    // 1) We Create Constructor here first :-
+// 1) We Create Constructor here first :-
 //*******************************************
     public D_LoginPage(WebDriver driver)
     {
@@ -18,17 +18,14 @@ public class D_LoginPage extends A_BasePage
 // 2) Elements:-
 //*******************
 
-    @FindBy(id="Email")
+    @FindBy(xpath="//input[@id='Email']")
     WebElement EnterEmail;
 
-    @FindBy(className = "passwor")
+    @FindBy(xpath = "//input[@id='Password']")
     WebElement EnterPassword;
 
     @FindBy(xpath = "//button[normalize-space()='Log in']")
     WebElement ClickOnLoginBtn;
-
-    //we need to add here validation , once the website work fine
-
 
     @FindBy(xpath = "//a[normalize-space()='Log out']")
     WebElement ClickOnLogoutBtn;
@@ -40,23 +37,18 @@ public class D_LoginPage extends A_BasePage
 
    public void setEnterEmail(String email)
    {
-       EnterEmail.sendKeys();
+       EnterEmail.sendKeys(email);
    }
 
    public void setEnterPassword(String password)
    {
-       EnterPassword.sendKeys();
+       EnterPassword.sendKeys(password);
    }
 
    public void setClickOnLoginBtn()
    {
        ClickOnLoginBtn.click();
    }
-
-   //we need to add here validation , once the website work fine
-
-
-
 
     public void setClickOnLogoutBtn()
     {

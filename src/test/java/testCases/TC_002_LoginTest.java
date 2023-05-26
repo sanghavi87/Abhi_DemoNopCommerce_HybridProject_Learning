@@ -4,6 +4,7 @@ import junit.framework.Assert;
 import org.testng.annotations.Test;
 import pageObjects.B_HomePage;
 import pageObjects.D_LoginPage;
+import pageObjects.E_MyAccountPage;
 import testBase.A_BaseClass;
 
 public class TC_002_LoginTest extends A_BaseClass
@@ -19,6 +20,7 @@ public class TC_002_LoginTest extends A_BaseClass
             B_HomePage hp = new B_HomePage(driver);  //for login we get data from "B_HomePage" first
             hp.setClickOnLogin();
             logger.info("*** Clicked on Login Link ***");
+            System.out.println("login test");
 
 
             D_LoginPage lp = new D_LoginPage(driver);  //for login we get data from "D_LoginPage" 2nd
@@ -29,15 +31,15 @@ public class TC_002_LoginTest extends A_BaseClass
             logger.info("*** Clicked on Login Button ***");
 
 
-
-
-
-
+            E_MyAccountPage map=new E_MyAccountPage(driver); //after successful login validate my account page
+            logger.info("*** Validate MyAccountPage after successful login ***");
+           boolean targetpage= map.isMyAccountPageExist();
+           Assert.assertEquals(targetpage,true);
 
         }
-        catch (Exception e)
+        catch (Exception e)     //if anything is failed and throw any exception then in that case my catch block will perform
         {
-            Assert.fail();
+           Assert.fail();
         }
 
         logger.info("*** Finished TC_002_Login ***");

@@ -44,6 +44,7 @@ public class A_BaseClass
     //Approach-1 :- by using xml file and pass the browser through parameter:-
     //***********************************************************************
 
+
     @BeforeClass(groups = {"Master","Sanity","Regression"})
     @Parameters("browser") //we pass here "browser" from the xml parameter to call diff browser
     public void setup(String br) //we create "br" variable to call diff. browser  //we create setup method for every test
